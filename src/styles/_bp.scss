@@ -1,0 +1,27 @@
+// Breakpoints for each query
+$smartphone: 521px;
+$tabletPortrait: 768px;
+$tabletLandscape: 1025px;
+$smallDesktop: 1281px;
+$largeDesktop: 1401px;
+
+//mobileFirst strategy
+@mixin respondTo($media) {
+    @if $media == tablet {
+        @media (min-width: $smartphone) {
+            @content;
+        }
+    } @else if $media == smallScreen {
+        @media (min-width: $tabletPortrait) {
+            @content;
+        }
+    } @else if $media == smallDesktop {
+        @media (min-width: $tabletLandscape) {
+            @content;
+        }
+    } @else if $media == desktop {
+        @media (min-width: $largeDesktop) {
+            @content;
+        }
+    }
+}

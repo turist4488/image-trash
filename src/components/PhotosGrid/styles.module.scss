@@ -1,0 +1,106 @@
+@import "../../styles/variables";
+@import "../../styles/bp";
+
+
+.actionButton {
+    min-width: 32px;
+    min-height: 32px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: $secondary-color;
+    font-size: 1.25em;
+    cursor: pointer;
+    transition: $hover-color-transition;
+    &:hover {
+        color: $secondary-color-darken;
+    }
+}
+
+.grid {
+    margin-top: 1.5rem;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.photosWrapper {
+    display: grid;
+    height: 100%;
+    grid-row-gap: 2rem;
+    grid-column-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.photo {
+    border-radius: $element-border-radius;
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+    transition: $hover-bg-transition;
+
+    &:hover {
+        background-color: #f0f0f0;
+    }
+
+    &Preview {
+        position: relative;
+        flex: 9;
+
+        &Image {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            > img {
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+
+    &Metadata {
+        margin-top: 1rem;
+        &Name {
+            display: block;
+            font-size: 1.125em;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.actions {
+    display: flex;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 0.5 * $layout-gutter 0;
+    margin-bottom: 1rem;
+
+    &Left {
+        margin-right: 1rem;
+    }
+    &Right {
+        margin-left: auto;
+    }
+}
+
+.uploadButton {
+    composes: actionButton;
+
+    input {
+        appearance: none;
+        width: 0;
+        display: none;
+        height: 0;
+        position: absolute;
+    }
+}

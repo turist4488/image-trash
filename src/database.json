@@ -1,0 +1,28 @@
+{
+    "images": [
+        {
+            "fileName": "Cat Corona 1",
+            "url": "https://images.pexels.com/photos/1314550/pexels-photo-1314550.jpeg?cs=srgb&dl=pexels-katarzyna-modrzejewska-1314550.jpg&fm=jpg",
+            "size": 222100,
+            "lastModified": "2020-08-05T19:43:33.323Z"
+        },
+        {
+            "fileName": "Grey Cat",
+            "url": "https://images.pexels.com/photos/1521304/pexels-photo-1521304.jpeg?cs=srgb&dl=pexels-kirsten-b%C3%BChne-1521304.jpg&fm=jpg",
+            "size": 122100,
+            "lastModified": "2020-08-03T19:43:33.323Z"
+        },
+        {
+            "fileName": "Sad Cat",
+            "url": "https://images.pexels.com/photos/156934/pexels-photo-156934.jpeg?cs=srgb&dl=pexels-flickr-156934.jpg&fm=jpg",
+            "size": 288100,
+            "lastModified": "2020-08-04T19:43:33.323Z"
+        },
+        {
+            "fileName": "Red Cat",
+            "url": "https://images.pexels.com/photos/208998/pexels-photo-208998.jpeg?cs=srgb&dl=pexels-pixabay-208998.jpg&fm=jpg",
+            "size": 388100,
+            "lastModified": "2020-08-05T19:43:33.323Z"
+        }
+    ]
+}

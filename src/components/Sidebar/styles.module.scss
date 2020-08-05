@@ -1,0 +1,71 @@
+@import "../../styles/variables";
+@import "../../styles/bp";
+
+.sidebar {
+    background-color: $background-dark-color;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding: $layout-gutter;
+    align-items: stretch;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 2rem;
+    &Icon {
+        font-size: 2.75em;
+        color: $secondary-color;
+    }
+}
+
+.nav {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    &Link {
+        color: #ffffff77;
+        padding: 0.125rem 0;
+        margin-bottom: 1.5rem;
+        transition: $hover-color-transition;
+        display: flex;
+        align-items: center;
+    
+
+        &Icon {
+            min-width: 32px;
+            font-size: 1.25em;
+            margin-right: 0.5rem;
+        }
+        &Active, &:hover {
+            color: $text-color-white;
+        }
+    }
+}
+
+.bottom {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+.actions {
+    margin-top: auto;
+}
+
+.upgradeLink {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: $element-border-radius;
+    border: 1px solid $secondary-color;
+    display: flex;
+    align-items: center;
+    color: $text-color-white;
+
+    &Icon {
+        color: $secondary-color;
+        margin-right: 0.5rem;
+    }
+}

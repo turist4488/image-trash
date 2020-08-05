@@ -1,0 +1,8 @@
+@import "../../styles/variables";
+
+.photosView {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 $layout-gutter;
+}
