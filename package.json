@@ -6,10 +6,10 @@
   "author": "rsachenok <turist4488@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prettier": "",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --config webpack.config.js --open",
     "build": "cross-env NODE_ENV=development webpack --config webpack.config.js",
-    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js"
+    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "prettier": "prettier --config ./.prettierrc --write \"**/*.(js|jsx)\""
   },
   "dependencies": {
     "@babel/runtime": "^7.11.1",
@@ -31,6 +31,7 @@
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.0.3",
     "cross-env": "^7.0.2",
     "css-loader": "^4.2.0",
     "file-loader": "^6.0.0",

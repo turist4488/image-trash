@@ -1,8 +1,11 @@
 @import "variables";
 @import "bp";
 
+@import "utils/loader";
+
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {

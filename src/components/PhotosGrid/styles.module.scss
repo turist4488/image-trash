@@ -19,20 +19,39 @@
 
 .grid {
     margin-top: 1.5rem;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1rem;
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        height: 30px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.0001) 0%, #fff 100%);
+    }
+}
+
+.photosWrapper {
+    display: grid;
+    grid-row-gap: 1.75rem;
+    grid-column-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(1fr, 1fr));
+    overflow-y: scroll;
     &::-webkit-scrollbar {
         display: none;
     }
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-}
 
-.photosWrapper {
-    display: grid;
-    height: 100%;
-    grid-row-gap: 2rem;
-    grid-column-gap: 1.5rem;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    @include respondTo(tablet) {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
 }
 
 .photo {
@@ -80,13 +99,19 @@
 }
 
 .actions {
-    display: flex;
     border-bottom: 1px solid #f0f0f0;
     padding: 0.5 * $layout-gutter 0;
     margin-bottom: 1rem;
+    @include respondTo(tablet) {
+        display: flex;
+    }
 
     &Left {
-        margin-right: 1rem;
+        margin-bottom: 1rem;
+        @include respondTo(tablet) {
+            margin-right: 1rem;
+            margin-bottom: 0;
+        }
     }
     &Right {
         margin-left: auto;
@@ -103,4 +128,10 @@
         height: 0;
         position: absolute;
     }
+}
+
+.errorMessage {
+    padding: $layout-gutter;
+    text-align: center;
+    font-size: 2em;
 }

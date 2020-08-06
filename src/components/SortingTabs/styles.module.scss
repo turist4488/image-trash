@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+@import "../../styles/bp";
+
+.sortingTab {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875em;
+    background-color: transparent;
+    border-radius: $element-border-radius;
+    transition: $hover-bg-transition, $hover-color-transition;
+    cursor: pointer;
+
+    input[type="radio"] {
+        appearance: none;
+        position: absolute;
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    @include respondTo(tablet) {
+        margin-left: 0.5rem;
+    }
+}
+
+.sortingTabActive {
+    composes: sortingTab;
+    cursor: auto;
+    color: $text-color-white;
+    background-color: $background-dark-color;
+
+}

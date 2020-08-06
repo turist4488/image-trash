@@ -1,13 +1,9 @@
 import React from 'react';
 
-
 const EventsView = () => {
-
     return (
         <div className="container">
-            <h1 className="page-title">
-                Events
-            </h1>
+            <h1 className="page-title">Events</h1>
         </div>
     );
 };

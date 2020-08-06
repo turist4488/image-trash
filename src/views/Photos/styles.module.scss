@@ -1,8 +1,103 @@
 @import "../../styles/variables";
+@import "../../styles/bp";
+
 
 .photosView {
-    display: flex;
-    flex-direction: column;
     height: 100%;
     padding: 0 $layout-gutter;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.header {
+    align-items: center;
+    padding-bottom: $layout-gutter;
+    @include respondTo(tablet) {
+        margin-bottom: 1rem;
+        display: flex;
+    }
+    &Right {
+        flex: 1;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        @include respondTo(tablet) {
+            flex: 0 1 auto;
+        }
+    }
+}
+
+.search {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 1rem 0.5rem 2rem;
+    border-bottom: 1px solid transparent;
+    transition: $hover-border-transition;
+
+    @include respondTo(tablet) {
+        flex: 0 1 auto;
+    }
+
+    &:focus-within {
+        border-color: $background-dark-color;
+    }
+
+    &Input {
+        font-size: 16px;
+        border-image: none;
+        outline: none;
+        border: none;
+        transition: $hover-color-transition;
+        color: lighten($color: $background-dark-color, $amount: 40);
+        position: relative;
+        &:focus {
+            color: $text-color;
+            border-color: $background-dark-color;
+        }
+    }
+
+    &Icon {
+        position: absolute;
+        left: 1.5rem;
+        color: lighten($color: $background-dark-color, $amount: 40);
+        z-index: 3;
+        &:focus-within, &:focus {
+            color: $background-dark-color;
+        }
+    }
+}
+
+.notificationButton {
+    color: $secondary-color;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: $hover-color-transition;
+    &:hover {
+        color: $secondary-color-darken;
+    }
+}
+
+.accountButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    @include respondTo(tablet) {
+        display: none;
+    }
+    &Icon {
+        margin-left: 1rem;
+        font-size: 0.75em;
+    }
+}
+
+.accountButtonDesktop {
+    composes: accountButton;
+    display: none;
+    min-width: 150px;
+
+    @include respondTo(tablet) {
+        display: flex;
+    }
 }
